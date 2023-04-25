@@ -1,18 +1,13 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-from dotenv import load_dotenv
 import boto3
-import os
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
 app = Flask(__name__)
 
-s3 = boto3.client('s3',
-                aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
-                aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
-                aws_session_token=os.getenv('AWS_DEFAULT_REGION')
-                    )
+s3 = boto3.client('s3')
 BUCKET_NAME='mydaniaws2'
 
 
