@@ -8,3 +8,5 @@ Datos
 
 - aws sts get-session-token
   Con este comando se consigue los datos temporales para configurar el .env y tener que instalar amazon cli, localmente.
+  
+- Borrar el archivo .env si tenes amazon cli, porque este puede causar problemas, ya que llama la clave que tenes en el archivo en ves de llamar a tus credenciales de aws configure.
