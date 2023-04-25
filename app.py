@@ -26,7 +26,7 @@ def upload():
                 s3.upload_file(
                     Filename=filename,
                     Bucket = BUCKET_NAME,
-                    Key = filename
+                    Key = 'pdf_input/'+ filename
                 )
                 msg = "Upload Done ! "
     return render_template("index.html",msg =msg)
