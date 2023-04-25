@@ -19,10 +19,10 @@ def home():
 @app.route('/upload',methods=['post'])
 def upload():
     if request.method == 'POST':
-        img = request.files['file']
-        if img:
-                filename = secure_filename(img.filename)
-                img.save(filename)
+        pdf_upload = request.files['file']
+        if pdf_upload:
+                filename = secure_filename(pdf_upload.filename)
+                pdf_upload.save(filename)
                 s3.upload_file(
                     Filename=filename,
                     Bucket = BUCKET_NAME,
